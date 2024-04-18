@@ -53,7 +53,7 @@ const VideoRecorder = () => {
         if (mediaStream) {
             // Set the video element's source object to the obtained media stream
             const videoElement = document.getElementById('video-preview');
-            if (videoElement) videoElement.srcObject = mediaStream;
+            if (videoElement && "srcObject" in videoElement) videoElement.srcObject = mediaStream;
         }
     }, [mediaStream]);
     
